@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-zinc-50 text-zinc-900 antialiased;
+}
+
+.light body {
+  color-scheme: light;
+}
+
+.dark body {
+  color-scheme: dark;
+  @apply bg-zinc-950 text-zinc-100;
+}

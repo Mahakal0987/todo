@@ -1,0 +1,33 @@
+node_modules/
+dist/
+build/
+.out/
+.turbo/
+*.local
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# env / secrets
+.env
+.env.*
+!.env.example
+wrangler.toml
+*.pem
+
+# coverage / caches
+coverage/
+.cache/
+.wrangler/
+
+# android
+android/.expo/
+android/android/
+android/ios/
+android/node_modules/
+
+# log files
+*.log
+npm-debug.log*

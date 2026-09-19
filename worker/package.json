@@ -1,0 +1,27 @@
+{
+  "name": "@todo/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply todo-db",
+    "db:local": "wrangler d1 migrations apply todo-db --local",
+    "typecheck": "tsc --noEmit",
+    "generate": "drizzle-kit generate --config ../../packages/db/drizzle.config.ts"
+  },
+  "dependencies": {
+    "@todo/auth": "*",
+    "@todo/db": "*",
+    "drizzle-orm": "^0.44.5",
+    "hono": "^4.7.0",
+    "jose": "^6.0.10"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260919.0",
+    "drizzle-kit": "^0.31.1",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.13.0"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "todo-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "JWT_SECRET": "dev-secret-change-me",
+    "REFRESH_SECRET": "dev-refresh-secret-change-me",
+    "APP_NAME": "PlanDeck"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "todo-db",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "../packages/db/drizzle"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "ATTACHMENTS",
+      "bucket_name": "todo-attachments",
+      "preview_bucket_name": "todo-attachments-dev"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "SESSIONS",
+      "id": "00000000000000000000000000000000"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "HUBS",
+        "class_name": "RealtimeHub"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["RealtimeHub"]
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "30 0 * * *",
+      "*/10 * * * *"
+    ]
+  }
+}
