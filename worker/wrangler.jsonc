@@ -16,7 +16,7 @@
     {
       "binding": "DB",
       "database_name": "todo-db",
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "b66cfea4-ff3b-453b-8347-1577ab7dffa6",
       "migrations_dir": "../packages/db/drizzle"
     }
   ],
@@ -30,7 +30,7 @@
   "kv_namespaces": [
     {
       "binding": "SESSIONS",
-      "id": "00000000000000000000000000000000"
+      "id": "a4d859c4aee74d79af6aedb9cfaf7d2f"
     }
   ],
   "durable_objects": {
